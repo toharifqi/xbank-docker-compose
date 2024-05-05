@@ -48,7 +48,7 @@ services:
       service: microservice-base-config 
         
   accounts:
-    image: toharifqi/accounts:s6
+    image: toharifqi/accounts:s7
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -63,7 +63,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
   
   loans:
-    image: toharifqi/loans:s6
+    image: toharifqi/loans:s7
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -78,7 +78,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3307/loansdb"
           
   cards:
-    image: toharifqi/cards:s6
+    image: toharifqi/cards:s7
     container_name: cards-ms
     ports:
       - "9000:9000"
