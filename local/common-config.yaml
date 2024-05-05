@@ -13,8 +13,6 @@ services:
       retries: 10
       interval: 10s
       start_period: 10s
-    environment:
-      MYSQL_ROOT_PASSWORD: root
   
   microservice-base-config:
     extends:
