@@ -9,7 +9,7 @@ services:
     image: mysql
     healthcheck:
       test: [ "CMD","mysqladmin","ping","-h","localhost" ]
-      timeout: 10s
+      timeout: 5s
       retries: 10
       interval: 10s
       start_period: 10s
@@ -35,3 +35,12 @@ services:
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
+  
+  microservice-eureka-config:
+    extends:
+      service: microservice-configserver-config
+    #    depends_on:
+    #      eurekaserver:
+    #        condition: service_healthy
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8070/eureka"
